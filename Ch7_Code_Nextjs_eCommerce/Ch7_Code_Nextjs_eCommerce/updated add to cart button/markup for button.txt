@@ -1,0 +1,10 @@
+{/* NEW BUTTON */}
+<button
+  className="button btn-cart"
+  type="button"
+  onClick={() => onAdd(product, qty)}
+>
+  <span>
+ <span>Add to My Bag</span>
+  </span>
+</button>

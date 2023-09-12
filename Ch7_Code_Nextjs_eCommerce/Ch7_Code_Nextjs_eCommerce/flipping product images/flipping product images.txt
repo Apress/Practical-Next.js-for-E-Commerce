@@ -1,0 +1,72 @@
+/* FLIP IMAGES */
+.fliptile {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  perspective: 50em;
+}
+
+.fliptile * {
+  box-sizing: padding-box;
+  transition: all 0.2s ease-out;
+}
+
+.fliptile img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.fliptile figcaption {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  transform: translateY(40px);
+}
+
+.fliptile h2 {
+  margin: 0 0 5px;
+}
+
+.fliptile h2 {
+  font-weight: 600;
+}
+
+.fliptile:after {
+  background-color: rgb(0, 0, 0, 0.1);
+  position: absolute;
+  content: "";
+  display: block;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  transition: all 0.4s ease-in-out;
+  transform: rotateX(-90deg);
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+.fliptile:hover figcaption,
+.fliptile.hover figcaption {
+  transform: translateY(0%);
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.fliptile:hover:after,
+.fliptile.hover:after {
+  transform: rotateX(0);
+  opacity: 0.9;
+}

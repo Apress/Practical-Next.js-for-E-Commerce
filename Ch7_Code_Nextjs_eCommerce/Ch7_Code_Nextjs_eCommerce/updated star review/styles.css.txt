@@ -1,0 +1,28 @@
+/* UPDATED STAR COUNT */
+.star-rating button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  display: flex;
+}
+
+.on {
+  color: #f02d34;
+  fill: #f02d34;
+}
+
+.off {
+  color: #d3d3d3;
+  fill: #ffffff;
+}
+
+.on > path {
+  color: #f02d34;
+  fill: #f02d34;
+}

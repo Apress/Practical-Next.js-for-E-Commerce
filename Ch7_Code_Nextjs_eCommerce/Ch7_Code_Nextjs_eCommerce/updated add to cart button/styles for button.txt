@@ -1,0 +1,159 @@
+/* UPDATED ADD TO CART BUTTON */
+.buttons {
+  margin-top: 40px;
+}
+.buttons .add-to-cart,
+.buttons .buy-now {
+  margin-top: 0;
+}
+
+@keyframes shift-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40px);
+  }
+}
+
+@keyframes shift-left-circle {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(-40px);
+  }
+}
+
+@keyframes shift-left-mask {
+  0% {
+    height: 7px;
+    transform: translateX(0) rotate(0);
+  }
+  50% {
+    transform: translateX(0) rotate(180deg);
+  }
+  100% {
+    transform: translateX(-40px) rotate(180deg);
+  }
+}
+
+.btn-cart {
+  display: block;
+  width: 200px;
+  border: none;
+  margin: 0 auto;
+  background: none;
+  background-color: #ffffff;
+  font-weight: 500;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  height: 45px;
+  border: 1px solid #f02d34;
+  font-size: 18px;
+}
+
+.btn-cart:before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid #f02d34;
+  transform: translateX(0);
+  left: 94px;
+  border-radius: 50%;
+  top: 5px;
+  box-sizing: border-box;
+}
+
+.btn-cart:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f02d34;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-cart:focus {
+  outline: none;
+}
+
+.btn-cart:focus:before {
+  animation: shift-left-circle 800ms forwards;
+  animation-delay: 1200ms;
+}
+
+.btn-cart:focus:after {
+  width: 20px;
+  height: 20px;
+  top: 12px;
+  left: 90px;
+  animation: shift-left 400ms forwards;
+  animation-delay: 1200ms;
+  transition-delay: 400ms;
+}
+
+.btn-cart:focus > span:before {
+  animation: shift-left-mask 800ms forwards;
+  animation-delay: 800ms;
+  height: 7px;
+}
+
+.btn-cart:focus > span:after {
+  transform: translate(-30%, 0);
+  transition-delay: 1600ms;
+  opacity: 1;
+}
+
+.btn-cart:focus > span span {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.btn-cart > span {
+  position: relative;
+  display: block;
+}
+
+.btn-cart > span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  background: white;
+  top: 5px;
+  left: 94px;
+  animation-timing-function: linear;
+  transform: translateX(0) rotate(0deg);
+  transform-origin: center bottom;
+}
+
+.btn-cart > span:after {
+  content: "Added";
+  color: green;
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  opacity: 0;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translate(-30%, 20px);
+  transition-delay: 0;
+}
+
+.btn-cart span span {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0px);
+}

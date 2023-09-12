@@ -1,0 +1,5 @@
+import dynamic from "next/dynamic";
+const Tabs = dynamic(
+  import("react-tabs").then((mod) => mod.Tabs),
+  { ssr: false }
+);
