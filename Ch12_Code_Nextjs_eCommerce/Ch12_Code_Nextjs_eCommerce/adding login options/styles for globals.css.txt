@@ -1,0 +1,24 @@
+/* CHANGES FOR AUTHENTICATION */
+.demo-banner-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.demo-banner-container > span:nth-child(2) {
+  display: flex;
+}
+
+.demo-banner-container > span:nth-child(2) > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.demo-banner-container > span:nth-child(2) > p {
+  margin-right: 15px;
+}
+
+.demo-banner-container > span:nth-child(2) > a {
+  border-left: 2px solid #ffffff;
+  padding-left: 15px;
+}

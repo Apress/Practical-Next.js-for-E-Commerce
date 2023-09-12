@@ -1,0 +1,5 @@
+import { useSession } from "next-auth/react";
+
+const { data: session } = useSession();
+
+{session && <Link href="/account">Account</Link>}
