@@ -1,0 +1,32 @@
+import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
+
+
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
+
+const Product = ({ product: { image, name, slug, price } }) => {
+  const { asPath } = useRouter();
+
+  let seoProductSlug = asPath.split("/")[2];
+  let seoProductName = "";
+
+  if (seoProductSlug != null) {
+    seoProductName = seoProductSlug.replace("-", " ");
+
+    if (seoProductSlug === slug.current) {
+      seoProductName = toTitleCase(seoProductSlug.replace("-", " "));
+    }
+  }
+
+
+      <NextSeo
+        title={`${toTitleCase(seoProductName)} - Macaron Magic`}
+        description="Great tasting home-made macarons"
+      />
+
+

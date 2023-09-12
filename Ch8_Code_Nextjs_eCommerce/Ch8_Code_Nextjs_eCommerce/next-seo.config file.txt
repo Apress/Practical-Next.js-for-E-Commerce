@@ -1,0 +1,31 @@
+export default {
+  openGraph: {
+    type: "website",
+    locale: "en_IE",
+    url: "https://www.url.ie/",
+    siteName: "SiteName",
+  },
+  twitter: {
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  },
+};
+
+
+
+      <DefaultSeo
+        {...SEO}
+        title="Next SEO Example"
+
+
+      <DefaultSeo
+        {...SEO}
+        title="Next SEO Example"
+        description="Next SEO is a plug in that makes managing your SEO easier in Next.js projects."
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          card: "summary_large_image",
+        }}
+      />

@@ -1,0 +1,9 @@
+      <DefaultSeo
+        title="Next SEO Example"
+        description="Next SEO is a plug in that makes managing your SEO easier in Next.js projects."
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
+        }}
+      />
