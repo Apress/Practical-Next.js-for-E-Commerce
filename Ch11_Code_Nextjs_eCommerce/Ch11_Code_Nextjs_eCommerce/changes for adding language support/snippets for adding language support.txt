@@ -1,0 +1,91 @@
+  "peerDependencies": {
+    "i18next": "^22.4.15",
+    "react-i18next": "^12.2.0"
+  },
+
+
+module.exports = {
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "nl-NL"],
+  },
+  react: { useSuspense: false },
+};
+
+
+
+const { i18n } = require("./next-i18next.config");
+
+
+
+  reactStrictMode: true,
+  sassOptions: {
+    includePaths: ["styles"],
+  },
+  i18n,    <-- ADD THIS LINE
+};
+
+
+
+
+import { appWithTranslation } from "next-i18next";
+import nextI18NextConfig from "../../next-i18next.config";
+
+
+
+export default appWithTranslation(MyApp, nextI18NextConfig);
+
+
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+
+
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "test"])),
+      // Will be passed to the page component as props
+    },
+  };
+}
+
+
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+
+/* Completed version of the test component code */
+const About = () => {
+  const { t } = useTranslation("test");
+
+  return (
+    <div className="about-us">
+      <p>About Macaron Magic</p>
+
+      <p>{t("about")}</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+        (...shortened for brevity)
+      </p>
+    </div>
+  );
+};
+
+
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["test"])),
+      // Will be passed to the page component as props
+    },
+  };
+}
+
+
+
+
+
+

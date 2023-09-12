@@ -1,0 +1,67 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+
+const { t } = useTranslation("demobanner");
+
+
+
+const Home = () => {
+  const { t } = useTranslation("home");
+
+  return (
+    <>
+...
+    </>
+  );
+};
+
+
+
+export async function getServerSideProps({ locale, params: { slug } }) {
+  // getStaticPaths()
+  const query = `*[_type == "product"] {
+    slug {
+      current
+    }
+  }
+  `;
+
+  const productPaths = await client.fetch(query);
+
+  const paths = productPaths.map((product) => ({
+    params: {
+      slug: product.slug.current,
+    },
+  }));
+
+  // getStaticProps()
+  const query2 = `*[_type == "product" && slug.current == '${slug}'][0]`;
+  const productsQuery = '*[_type == "product"]';
+
+  const product = await client.fetch(query2);
+  const products = await client.fetch(productsQuery);
+
+  return {
+    props: {
+      paths,
+      fallback: "blocking",
+      products,
+      product,
+      ...(await serverSideTranslations(locale, [
+        "demobanner",
+        "navbar",
+        "cart",
+        "footer",
+        "slug",
+        "minicart",
+        "emptycart",
+        "shop",
+        "product",
+        "info",
+      ])),
+      // Will be passed to the page component as props
+    },
+  };
+}
+

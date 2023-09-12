@@ -1,0 +1,28 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+
+const Home = () => {
+  const { t } = useTranslation("home");
+
+  return (
+
+
+
+...(await serverSideTranslations(locale, ["common", "test", "home"])),
+
+
+
+
+  <Link className="shop-now" href="/shop">
+    {t("shop-now")}
+  </Link>
+
+
+
+        <div className="intro">
+          <p>{t("welcome.para1")}</p>
+          <p>{t("welcome.para2")}</p>
+          <p>{t("welcome.para3")}</p>
+        </div>
+

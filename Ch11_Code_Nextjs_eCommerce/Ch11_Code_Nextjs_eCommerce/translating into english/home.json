@@ -1,0 +1,33 @@
+{
+  "home": "Home",
+  "about": "About",
+  "shop": "Shop",
+  "contact": "Contact",
+  "demo": "This is a demo store - no orders will be accepted or delivered",
+  "luxury": "Luxury Macarons made by hand",
+  "shop-now": "Shop now",
+  "welcome": {
+    "para1": "Welcome to Macaron Magic - the home of great-tasting, luxurious macarons, made by hand here in our workshop in the Peak District.",
+    "para2": "We have carefully chosen a select range of flavors for your delight, ready for you to enjoy - just imagine...biting into each one, where it practically melts in your mouth...yum!",
+    "para3": "To start, browse over to our shop where you will see the full range available - we'll be adding more over time. If you have any questions, please do let us know - our contact details are at the bottom of this page."
+  },
+  "perfect": {
+    "for": "PERFECT FOR",
+    "special": "SPECIAL OCCASIONS",
+    "text": "Share the love and give every guest a little explosion of sweetness with our show stopping macaron towers. Perfect for weddings, anniversaries and parties. You could even add a touch of luxury to party bags and wedding favors with these perfect bite sized treats."
+  },
+  "newsletter": {
+    "firstname": "First name",
+    "lastname": "Last name",
+    "email": "Email address"
+  },
+  "footer": {
+    "delivery": "Delivery",
+    "privacy": "Privacy",
+    "terms": "Terms and Conditions of Sale",
+    "contact": "Contact Us",
+    "email": "Contact: hello@macaron-magic.com",
+    "empty": "Your shopping bag is empty",
+    "gotoshop": "Go to Shop"
+  }
+}

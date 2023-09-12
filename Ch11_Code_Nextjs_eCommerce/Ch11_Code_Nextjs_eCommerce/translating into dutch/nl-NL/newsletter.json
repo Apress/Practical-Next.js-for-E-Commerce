@@ -1,0 +1,9 @@
+{
+  "join": "Meedoen",
+  "newsletter": {
+    "firstname": "Voornaam",
+    "lastname": "Achternaam",
+    "email": "E-mailadres",
+    "submit": "Indienen"
+  }
+}

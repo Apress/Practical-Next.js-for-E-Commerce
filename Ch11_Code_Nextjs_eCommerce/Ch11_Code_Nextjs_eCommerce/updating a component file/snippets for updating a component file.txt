@@ -1,0 +1,23 @@
+import { useTranslation } from "next-i18next";
+
+
+
+const DemoBanner = () => {
+  const { t } = useTranslation("demobanner")
+
+
+
+      <span>{t("demo")}</span>
+
+
+
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "home",
+        "demobanner",
+
+
+
+

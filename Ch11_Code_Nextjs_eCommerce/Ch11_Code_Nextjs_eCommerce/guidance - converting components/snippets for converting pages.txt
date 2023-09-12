@@ -1,0 +1,17 @@
+import { useTranslation } from "next-i18next";
+
+
+
+const { t } = useTranslation("demobanner");
+
+
+
+const Home = () => {
+  const { t } = useTranslation("home");
+
+  return (
+    <>
+...
+    </>
+  );
+};

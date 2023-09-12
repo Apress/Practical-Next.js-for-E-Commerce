@@ -1,0 +1,37 @@
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "nl-NL"],
+  },
+
+
+import { useRouter } from "next/router";
+
+
+<p>Hello world: {locale}</p>
+
+
+const handleLocaleChange = (event) => {
+  const value = event.target.value;
+
+  router.push(router.route, router.asPath, {
+    locale: value,
+  });
+};
+
+
+          <Link href="/" className={router.asPath === "/" ? "active" : ""}>
+            Home
+          </Link>
+
+          <Link
+            href="/about"
+            className={router.asPath === "/about" ? "active" : ""}
+          >
+            About
+          </Link>
+
+      <select onChange={handleLocaleChange} value={router.locale}>
+        <option value="en">English</option>
+        <option value="nl-NL">Nederlands</option>
+      </select>
+
