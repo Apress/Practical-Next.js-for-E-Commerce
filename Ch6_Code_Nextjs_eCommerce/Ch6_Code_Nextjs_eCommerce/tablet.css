@@ -1,0 +1,42 @@
+@media (min-width: 414px) and (max-width: 820px) {
+  body {
+    width: 100%;
+    display: flex;
+  }
+
+  .product-detail-container {
+    margin: 0;
+    padding: 40px;
+  }
+
+  footer > div:nth-child(1) {
+    padding: 30px;
+  }
+
+  .cart-wrapper {
+    top: 190px;
+    width: 100%;
+    min-height: 2000px;
+  }
+
+  @keyframes movemobile {
+    0% {
+      transform: translateY(-40%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  .cart-container {
+    height: 0;
+    min-height: 500px;
+    width: 100%;
+    animation-name: movemobile;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+  }
+}
